@@ -1,0 +1,141 @@
+body {
+    background-image: url(../images/background.png);
+    background-position: 0 0;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: 'Montserrat', sans-serif;
+}
+nav {
+    font-size: 28px;
+}
+.container-header {
+    margin-top: 16%;
+    padding-left: 5%;
+}
+.brand-name {
+    font-size: 65px;
+    color: white;
+    text-decoration: none;
+    height: 100px;
+    border-bottom: 4px solid white;
+}
+.brand-name:hover  {
+    color: white;
+}
+.btn-info {
+    width: 180px;
+    height: 50px;
+    border: 2px solid white;
+    color: white;
+    background: none;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+.container-aboutus {
+    margin-top: 18.5%;
+    color: white;
+    width: 100%;
+}
+.whowe{
+    padding-top: 100px;
+    text-align: center;
+}
+.whowe p {
+    font-size: 24px;
+}
+.aboutusimg {
+    background-image: url(../images/aboutus.png);
+    background-position: 0 0;
+    background-size: auto 100%;
+}
+.container-master, .container-reviews, .container-service, .container-address {
+    text-align: center;
+    width: 100%;
+}
+.carousel-inner {
+    width: 100%;
+    z-index: -1;
+}
+.container-reviews {
+    background-color: #fff;
+}
+.client {
+    width: 110px;
+    border-radius: 60px;
+}
+.review, .container-note {
+    text-align: center;
+    font-family: serif;
+    font-size: 24px;
+}
+.container-services {
+    font-size: 20px;
+    background-color: #000;
+    font-family: serif;
+}
+tr {
+    height: 60px;
+    vertical-align: middle;
+    font-size: 20px;
+}
+.container-note {
+    text-align: center;
+    color: #fff;
+    background-color: rgb(22, 22, 22);
+}
+input {
+    background-color: rgb(22, 22, 22);
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    width: 50%;
+    outline: none;
+}
+form {
+    align-content: center;
+}
+select {
+    width: 50%;
+    background-color: rgb(22, 22, 22);
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+}
+.choose {
+    align-content: center;
+}
+.btn-book {
+    background-color: #fff;
+    color: #000;
+    width: 220px;
+    height: 70px;
+    border-radius: 45px;
+    border: none;
+}
+.container-address {
+    background-color: #fff;
+    color: #000;
+}
+footer {
+    height: 150px;
+    font-size: 38px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+.profile {
+    width: 80px;
+    height: 80px;
+    border:none;
+    border-radius: 60px;
+    background:#fff;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    outline: none;
+}
