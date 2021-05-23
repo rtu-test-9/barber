@@ -103,29 +103,8 @@
   </div>
   <div class="container-services mb-5" style="color: white; text-align: center;" id="services">
     <h1 class="mt-5">УСЛУГИ</h1>
-    <img src="../images/dollar-sign.svg">
-    <table class="table mt-5" style="color: white;">
-      <tbody>
-        <tr>
-          <td>МУЖСКАЯ СТРИЖКА</td>
-          <td>2200₽</td>
-          <td>МОДЕЛИРОВАНИЕ БОРОДЫ</td>
-          <td>1500₽</td>
-        </tr>
-        <tr>
-          <td>СТРИЖКА БОРОДЫ</td>
-          <td>1000₽</td>
-          <td>ЧЕРНАЯ МАСКА</td>
-          <td>1200₽</td>
-        </tr>
-        <tr>
-          <td>ДЕТСКАЯ СТРИЖКА</td>
-          <td>1700₽</td>
-          <td>ТОНИРОВАНИЕ БОРОДЫ</td>
-          <td>1300₽</td>
-        </tr>
-      </tbody>
-    </table>
+    <img src=".<c:url value="/resources/static/images/dollar-sign.svg" />">
+
     <h1 class="pt-5">АКЦИЯ</h1>
     <p>Выбирайте несколько услуг и получайте скидку!</p>
     <h2>1+1 = 10%</h2>
@@ -145,8 +124,6 @@
             <p style="text-align: left;"><input type="checkbox" value="МУЖСКАЯ СТРИЖКА" style="width: 40px;">Мужская стрижка</p>
             <p style="text-align: left;"><input type="checkbox" value="ДЕТСКАЯ СТРИЖКА" style="width: 40px;">Детская стрижка</p>
             <p style="text-align: left;"><input type="checkbox" value="СТРИЖКА БОРОДЫ" style="width: 40px;">Стрижка бороды</p>
-          </div>
-          <div class="col" style="width: 50%;">
             <p style="text-align: left;"><input type="checkbox" value="ЧЕРНАЯ МАСКА" style="width: 40px;">Черная маска</p>
             <p style="text-align: left;"><input type="checkbox" value="МОДЕЛИРОВАНИЕ БОРОДЫ" style="width: 40px;">Моделирование бороды</p>
             <p style="text-align: left;"><input type="checkbox" value="ТОНИРОВАНИЕ БОРОДЫ" style="width: 40px;">Тонирование бороды</p>
@@ -177,7 +154,7 @@
       </div>
       <div class="col pt-5 mt-3" style="font-family: serif; font-size: 24px;">
         <h1 class="mb-3">КОНТАКТЫ</h1>
-        <img src="../images/map-pin.svg"><br>
+        <img src="<c:url value="/resources/static/images/map-pin.svg" />"><br>
         <p class="mt-4"><b>Адрес: </b>Куликовская ул., 6, Москва, 117628</p>
         <p><b>Время работы: </b>каждый день 10:00–22:00</p>
         <p><b>Контактный номер: </b>+7 (914) 587-62-01</p>
