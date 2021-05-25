@@ -73,18 +73,18 @@
     <img src="resources/static/images/scissors.svg" class="mb-5">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a href="#note"><img src="<c:url value="/resources/static/images/slide1.jpg" />" class="d-block w-100" alt="..."></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#note"><img src="<c:url value="/resources/static/images/slide2.jpg" />" class="d-block w-100" alt="..."></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#note"><img src="<c:url value="/resources/static/images/slide3.jpg" />" class="d-block w-100" alt="..."></a>
-        </div>
-        <div class="carousel-item">
-          <a href="#note"><img src="<c:url value="/resources/static/images/slide4.jpg" />" class="d-block w-100" alt="..."></a>
-        </div>
+        <c:set var = "is_active" value="${true}"/>
+        <c:forEach var = "barber" items="${barbers}">
+          <c:if test="${is_active == true}">
+            <div class="carousel-item active">
+          </c:if>
+          <c:if test="${is_active == false}">
+            <div class="carousel-item">
+          </c:if>
+              <a href="#note"><img src="<c:url value="/resources/static/images/slide_${barber.avatar}" />" class="d-block w-100" alt="..."></a>
+            </div>
+            <c:set var = "is_active" value="${false}"/>
+        </c:forEach>
       </div>
     </div>
   </div>
@@ -103,8 +103,23 @@
   </div>
   <div class="container-services mb-5" style="color: white; text-align: center;" id="services">
     <h1 class="mt-5">УСЛУГИ</h1>
-    <img src=".<c:url value="/resources/static/images/dollar-sign.svg" />">
-
+    <img src="<c:url value="/resources/static/images/dollar-sign.svg" />">
+    <table class="table mt-5" style="color: white;">
+      <tbody>
+      <c:set var="i" value = "${0}"/>
+        <c:forEach var="service" items="${services}">
+          <c:if test="${i % 2 == 0}">
+            <tr>
+          </c:if>
+              <td>${service.name.toUpperCase()}</td>
+              <td>${service.price}₽</td>
+          <c:if test="${i % 2 != 0}">
+              </tr>
+          </c:if>
+          <c:set var="i" value="${i + 1}"/>
+        </c:forEach>
+      </tbody>
+    </table>
     <h1 class="pt-5">АКЦИЯ</h1>
     <p>Выбирайте несколько услуг и получайте скидку!</p>
     <h2>1+1 = 10%</h2>
@@ -112,40 +127,8 @@
   </div>
   <div class="container-note pt-5 pb-5" id="note">
     <h1>ЗАПИСЬ</h1>
-    <img src="../images/edit.svg">
-    <form action="" class="mt-3">
-      <input class="mt-3" type="text" placeholder="Имя">
-      <input class="mt-3" type="text" placeholder="Фамилия">
-      <input class="mt-3 mb-3" type="phone" placeholder="Номер телефона">
-      <br><span style="width: 50%; text-align: start;">Выберите процедуру</span><br>
-      <div class="choose d-flex justify-content-center mt-5 mb-5" style="width: 100%;">
-        <div class="row" style="width: 54%; margin: 0px;">
-          <div class="col">
-            <p style="text-align: left;"><input type="checkbox" value="МУЖСКАЯ СТРИЖКА" style="width: 40px;">Мужская стрижка</p>
-            <p style="text-align: left;"><input type="checkbox" value="ДЕТСКАЯ СТРИЖКА" style="width: 40px;">Детская стрижка</p>
-            <p style="text-align: left;"><input type="checkbox" value="СТРИЖКА БОРОДЫ" style="width: 40px;">Стрижка бороды</p>
-            <p style="text-align: left;"><input type="checkbox" value="ЧЕРНАЯ МАСКА" style="width: 40px;">Черная маска</p>
-            <p style="text-align: left;"><input type="checkbox" value="МОДЕЛИРОВАНИЕ БОРОДЫ" style="width: 40px;">Моделирование бороды</p>
-            <p style="text-align: left;"><input type="checkbox" value="ТОНИРОВАНИЕ БОРОДЫ" style="width: 40px;">Тонирование бороды</p>
-          </div>
-        </div>
-      </div>
-      <br><span style="width: 50%; text-align: start;">Выберите мастера</span><br>
-      <select name="master" id="master" class="mt-3 mb-5 p-2">
-        <option value="Matvey">Матвей</option>
-        <option value="Aleksander">Александр</option>
-        <option value="Sofia">София</option>
-        <option value="Evgenya">Евгения</option>
-      </select>
-      <br><span style="width: 50%; text-align: start;">Выберите время</span><br>
-      <select name="master" id="time" class="mt-3 p-2">
-        <option value="10:00">10:00 - 12:00</option>
-        <option value="12:00">12:00 - 14:00</option>
-        <option value="14:00">14:00 - 16:00</option>
-        <option value="16:00">16:00 - 18:00</option>
-      </select><br>
-      <button class="mt-5 btn-book">ЗАПИСАТЬСЯ</button>
-    </form>
+    <img src="<c:url value="/resources/static/images/edit.svg" />">
+    <button type="submit" onclick="location.href='/order'">Записаться</button>
   </div>
   <div class="container-address pt-5 pb-5" id="address">
     <div class="row">
@@ -163,30 +146,10 @@
   </div>
   <footer>
     <p class="pt-5">
-      <img src="images/hash.svg">
+      <img src="<c:url value="/resources/static/images/map-pin.svg" />">
       BAYERN
     </p>
   </footer>
-
-  <!--Auth-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Auth-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
