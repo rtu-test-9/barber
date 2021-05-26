@@ -1,6 +1,7 @@
 package barber.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -8,9 +9,8 @@ import java.util.Set;
 @Table(name="services")
 public class Service {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -18,12 +18,34 @@ public class Service {
     @Column(name = "price")
     private float price;
 
+    public Service() {}
+
     @OneToMany(
             mappedBy = "service",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private Set<EmployeesServices> employees;
+    private Set<EmployeesServices> employeesServices = new HashSet<>();
+
+    public void setEmployeesServices(Set<EmployeesServices> employeesServices) {
+        this.employeesServices = employeesServices;
+    }
+
+    public Set<EmployeesServices> getEmployeesServices() {
+        return employeesServices;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -31,6 +53,10 @@ public class Service {
 
     public float getPrice() {
         return price;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     @Override

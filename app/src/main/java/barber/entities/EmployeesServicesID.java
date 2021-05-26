@@ -9,10 +9,26 @@ import java.util.Objects;
 public class EmployeesServicesID implements Serializable {
 
     @Column(name = "employee_id")
-    private Long employeeId;
+    public Long employeeId;
 
     @Column(name = "service_id")
-    private Long serviceId;
+    public Long serviceId;
+
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void setServiceId(Long serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
+    public Long getServiceId() {
+        return serviceId;
+    }
 
     public EmployeesServicesID() {}
 
@@ -20,8 +36,6 @@ public class EmployeesServicesID implements Serializable {
         this.employeeId = employeeId;
         this.serviceId = serviceId;
     }
-
-    //Getters omitted for brevity
 
     @Override
     public boolean equals(Object o) {
@@ -31,7 +45,7 @@ public class EmployeesServicesID implements Serializable {
             return false;
 
         EmployeesServicesID that = (EmployeesServicesID) o;
-        return Objects.equals(employeeId, that.serviceId) && Objects.equals(serviceId, that.serviceId);
+        return Objects.equals(employeeId, that.employeeId) && Objects.equals(serviceId, that.serviceId);
     }
 
     @Override

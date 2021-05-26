@@ -24,6 +24,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(basePackages = "barber")
 @PropertySource(value = "classpath:db.properties")
+@EnableTransactionManagement
 public class HibernateConfig {
 
     private Environment environment;
