@@ -10,14 +10,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-    @Autowired
+
     public CommentService commentService;
 
-    @Autowired
     public ServicesService servicesService;
 
-    @Autowired
     public EmployeeService employeeService;
+
+    @Autowired
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+    @Autowired
+    public void setCommentService(CommentService commentService) {
+        this.commentService = commentService;
+    }
+
+    @Autowired
+    public void setServicesService(ServicesService servicesService) {
+        this.servicesService = servicesService;
+    }
 
     @GetMapping("/")
     public String getHome(Model model) {

@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class CommentServiceImpl implements CommentService{
 
-    @Autowired
     private CommentDAO commentDAO;
+
+    @Autowired
+    public void setCommentDAO(CommentDAO commentDAO) {
+        this.commentDAO = commentDAO;
+    }
 
     @Override
     public List<Comment> find3LastComments() {

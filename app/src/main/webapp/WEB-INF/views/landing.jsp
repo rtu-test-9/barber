@@ -14,7 +14,6 @@
   <title>BAYERN</title>
 </head>
 <body>
-  <button class="profile"  data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="<c:url value="/resources/static/images/user.svg" />"></button>
   <div class="container-fluid mb-5">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid justify-content-end" id="header">
@@ -125,10 +124,12 @@
     <h2>1+1 = 10%</h2>
     <h2>2+1 = 15%</h2>
   </div>
-  <div class="container-note pt-5 pb-5" id="note">
+  <div class="d-flex align-items-center flex-column container-note pt-5 pb-5" id="note">
     <h1>ЗАПИСЬ</h1>
-    <img src="<c:url value="/resources/static/images/edit.svg" />">
-    <button type="submit" onclick="location.href='/order'">Записаться</button>
+    <div class="d-flex flex-column" style="width: 200px; height: 150px">
+      <img src="<c:url value="/resources/static/images/edit.svg" />">
+      <button class="btn btn-light" type="submit" onclick="location.href='/order'">Записаться</button>
+    </div>
   </div>
   <div class="container-address pt-5 pb-5" id="address">
     <div class="row">

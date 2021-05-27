@@ -7,9 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MasterChoice {
-    @Autowired
+public class MasterChoiceController {
+
     EmployeeService employeeService;
+
+    @Autowired
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
     @GetMapping("/order")
     public String getOrderForm(Model model) {
         model.addAttribute("masters", employeeService.getAll());
